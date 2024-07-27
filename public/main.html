@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The CarHub</title>
-    <link rel="stylesheet" href="./styles/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>CarHub</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <header>
@@ -13,10 +12,9 @@
             <div class="nav-container">
                 <img src="images/TheCarHubLogo.png" alt="The CarHub Logo" class="logo">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="main.html">Inicio</a></li>
+                    <li><a href="VendedorVentas.html">Ventas</a></li>
+                    <li><a href="#">Cerrar Sesión</a></li>
                 </ul>
             </div>
         </nav>
@@ -31,20 +29,41 @@
 
     <section class="services">
         <h2>Nuestros Vehículos principales</h2>
-        <div class="services-container">
-            <div class="service-item">
-                <h3>Vehículo 1</h3>
-                <p>Descripción del vehículo 1.</p>
+        <input type="text" id="search-bar" placeholder="Buscar autos...">
+        <div class="services-container" id="services-container">
+            <div class="service-item" data-description="Descripción del vehículo 1.">
+                <img src="./images/miata.jpg" alt="Mazda Miata MX-5">
+                <h3>Mazda Miata MX-5</h3>
             </div>
-            <div class="service-item">
-                <h3>Vehículo 2</h3>
-                <p>Descripción del vehículo 2.</p>
+            <div class="service-item" data-description="Descripción del vehículo 2.">
+                <img src="./images/NP300.jpg" alt="Nissan NP300">
+                <h3>Nissan NP300</h3>
             </div>
-            <div class="service-item">
-                <h3>Vehículo 3</h3>
-                <p>Descripción del vehículo 3.</p>
+            <div class="service-item" data-description="Descripción del vehículo 3.">
+                <img src="./images/versa.jpg" alt="Nissan Versa">
+                <h3>Nissan Versa</h3>
+            </div>
+            <div class="service-item" data-description="Descripción del vehículo 4.">
+                <img src="./images/aveo.jpg" alt="Chevrolet Aveo">
+                <h3>Chevrolet Aveo</h3>
+            </div>
+            <div class="service-item" data-description="Descripción del vehículo 5.">
+                <img src="./images/sentra.jpg" alt="Nissan Sentra">
+                <h3>Nissan Sentra</h3>
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="" alt="" id="modal-img">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
