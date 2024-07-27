@@ -1,0 +1,95 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../images/palmsbackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    width: 70%; /* Ajusta el ancho al 90% de la pantalla para mayor flexibilidad */
+    max-width: 1200px; /* Aumenta el ancho máximo para un diseño más espacioso */
+    height: 600px; /* Ajusta la altura según las necesidades del diseño */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra para mayor profundidad */
+}
+
+/* Sección de imagen */
+.image-section {
+    width: 60%;
+    background: url('../images/epicCar.jpg') no-repeat center center;
+    background-size: cover; /* Asegura que la imagen cubra completamente su sección */
+    background-position: center; /* Centra la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sección de login */
+.login-section {
+    width: 50%;
+    padding: 40px; /* Aumenta el padding para mayor comodidad en la entrada de datos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+/* Logo dentro de la sección de login */
+.login-section .logo {
+    width: 150px;
+    border-radius: 10px;
+}
+
+/* Título */
+.login-section h3 {
+    font-size: 1.75rem; /* Tamaño del título */
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 1.5rem; /* Espacio debajo del título */
+}
+
+/* Formulario */
+.login-section form {
+    width: 100%;
+    max-width: 400px; /* Ajusta el ancho máximo del formulario */
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* Espacio entre los campos del formulario */
+}
+
+/* Campos de entrada */
+.login-section input {
+    padding: 0.75rem; /* Aumenta el padding para un mejor área de entrada */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+    width: 100%;
+}
+
+/* Botón de envío */
+.login-section button {
+    padding: 0.75rem;
+    /*Aumentaelpaddingparaelbotón*/background: purple;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    /*Ajustaeltamañodelafuente*/cursor: pointer;
+    transition: background 0.3s;
+    width: 80%;
+    max-width: 300px;
+    align-self: center;
+}
+
+.login-section button:hover {
+    background: rgb(173, 14, 173);
+}
