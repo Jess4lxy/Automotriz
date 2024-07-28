@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - CarHub</title>
+    <link rel="stylesheet" href="styles/VendedorClientes.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <img src="images/TheCarHubLogo.png" alt="The CarHub Logo" class="logo">
+                <ul>
+                    <li><a href="main.html">Inicio</a></li>
+                    <li><a href="VendedorVentas.html">Ventas</a></li>
+                    <li><a href="VendedorClientes.html">Clientes</a></li>
+                    <li><a href="#">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="form-section">
+        <h2>Lista de Clientes</h2>
+        <input type="text" id="search-bar" placeholder="Buscar clientes...">
+        <div class="clients-container" id="clients-container">
+            <!-- Tarjetas de clientes generadas dinámicamente -->
+        </div>
+        <button id="add-client-btn">Agregar Cliente</button>
+    </section>
+
+    <div id="client-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="client-form">
+                <h2>Agregar/Editar Cliente</h2>
+                <div class="form-group">
+                    <label for="nombres">Nombres</label>
+                    <input type="text" id="nombres" name="nombres" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+                </div>
+                <div class="form-group">
+                    <label for="num_contacto">Número de Contacto</label>
+                    <input type="text" id="num_contacto" name="num_contacto" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </div>
+                <div class="form-group">
+                    <label for="identificacion">Identificación</label>
+                    <input type="file" id="identificacion" name="identificacion" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="client-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Detalles del Cliente</h2>
+            <p><strong>ID:</strong> <span id="client-id"></span></p>
+            <p><strong>Nombres:</strong> <span id="client-nombres"></span></p>
+            <p><strong>Apellidos:</strong> <span id="client-apellidos"></span></p>
+            <p><strong>Número de Contacto:</strong> <span id="client-num_contacto"></span></p>
+            <p><strong>Correo:</strong> <span id="client-correo"></span></p>
+            <p><strong>Dirección:</strong> <span id="client-direccion"></span></p>
+            <p><strong>Identificación:</strong> <img id="client-identificacion" src="" alt="Identificación" class="client-id-img"></p>
+            <button class="edit-btn" id="edit-client-btn">Editar</button>
+        </div>
+    </div>
+
+    <script src="js/VendedorClientes.js"></script>
+</body>
+</html>
