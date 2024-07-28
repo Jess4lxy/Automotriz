@@ -1,0 +1,103 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #1b1b32;
+    color: #f0f0f0;
+}
+
+header {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav .logo {
+    width: 120px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6f42c1;
+}
+
+.sales {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.sales h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #d7b3ff;
+}
+
+.sales-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sale-item {
+    background-color: #37374a;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.sale-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.sale-item h3 {
+    color: #d7b3ff;
+    margin: 10px 0;
+}
+
+.sale-description {
+    color: #f0f0f0;
+}
+
+.sale-item:hover {
+    transform: scale(1.05);
+}

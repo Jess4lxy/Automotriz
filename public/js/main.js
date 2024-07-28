@@ -1,38 +1,164 @@
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-bar');
-    const serviceItems = document.querySelectorAll('.service-item');
+    const serviceContainer = document.getElementById('services-container');
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-img');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDescription = document.getElementById('modal-description');
+    const modalMarcaModelo = document.getElementById('modal-Marca_Modelo');
+    const modalTipoauto = document.getElementById('modal-Tipoauto');
+    const modalNumeroserie = document.getElementById('modal-Numeroserie');
+    const modalAnio = document.getElementById('modal-Anio');
+    const modalCilindros = document.getElementById('modal-Cilindros');
+    const modalDisponibilidad = document.getElementById('modal-Disponibilidad');
+    const modalPrecio = document.getElementById('modal-Precio');
+    const modalCantidadpuertas = document.getElementById('modal-Cantidadpuertas');
+    const modalColor = document.getElementById('modal-Color');
+    const modalGarantia = document.getElementById('modal-Garantia');
+    const modalDescuentos = document.getElementById('modal-Descuentos');
+    const modalNumeroseguro = document.getElementById('modal-Numeroseguro');
     const closeBtn = document.querySelector('.close');
     const saleBtn = document.getElementById('sale-btn');
+
+    let selectedCarTitle = '';
+
+    // Datos simulados de los autos
+    const cars = [
+        {
+            Imagen: './images/miata.jpg',
+            Marca: 'Mazda',
+            Modelo: 'Miata MX-5',
+            Numeroserie: 12345,
+            Tipoauto: 'Deportivo',
+            Anio: 2021,
+            Cilindros: 4,
+            Disponibilidad: 'Sí',
+            Precio: 35000.00,
+            Cantidadpuertas: 2,
+            Color: 'Rojo',
+            Garantia: '5 años',
+            Descuentos: 2000.00,
+            Numeroseguro: 98765
+        },
+        {
+            Imagen: './images/NP300.jpg',
+            Marca: 'Nissan',
+            Modelo: 'NP300',
+            Numeroserie: 67890,
+            Tipoauto: 'Pickup',
+            Anio: 2020,
+            Cilindros: 4,
+            Disponibilidad: 'Sí',
+            Precio: 25000.00,
+            Cantidadpuertas: 4,
+            Color: 'Blanco',
+            Garantia: '3 años',
+            Descuentos: 1500.00,
+            Numeroseguro: 87654
+        },
+        {
+            Imagen: './images/versa.jpg',
+            Marca: 'Nissan',
+            Modelo: 'Versa',
+            Numeroserie: 11223,
+            Tipoauto: 'Sedán',
+            Anio: 2019,
+            Cilindros: 4,
+            Disponibilidad: 'No',
+            Precio: 20000.00,
+            Cantidadpuertas: 4,
+            Color: 'Azul',
+            Garantia: '2 años',
+            Descuentos: 1000.00,
+            Numeroseguro: 44321
+        },
+        {
+            Imagen: './images/aveo.jpg',
+            Marca: 'Chevrolet',
+            Modelo: 'Aveo',
+            Numeroserie: 44556,
+            Tipoauto: 'Sedán',
+            Anio: 2018,
+            Cilindros: 4,
+            Disponibilidad: 'Sí',
+            Precio: 18000.00,
+            Cantidadpuertas: 4,
+            Color: 'Negro',
+            Garantia: '3 años',
+            Descuentos: 800.00,
+            Numeroseguro: 66554
+        },
+        {
+            Imagen: './images/sentra.jpg',
+            Marca: 'Nissan',
+            Modelo: 'Sentra',
+            Numeroserie: 77889,
+            Tipoauto: 'Sedán',
+            Anio: 2021,
+            Cilindros: 4,
+            Disponibilidad: 'Sí',
+            Precio: 22000.00,
+            Cantidadpuertas: 4,
+            Color: 'Gris',
+            Garantia: '4 años',
+            Descuentos: 1500.00,
+            Numeroseguro: 98765
+        }
+    ];
+
+    // Generar dinámicamente las tarjetas de autos
+    cars.forEach(car => {
+        const carItem = document.createElement('div');
+        carItem.className = 'service-item bounce-in';
+        carItem.dataset.Marca_Modelo = `${car.Marca} ${car.Modelo}`;
+        carItem.dataset.Tipoauto = car.Tipoauto;
+        carItem.dataset.Numeroserie = car.Numeroserie;
+        carItem.dataset.Anio = car.Anio;
+        carItem.dataset.Cilindros = car.Cilindros;
+        carItem.dataset.Disponibilidad = car.Disponibilidad;
+        carItem.dataset.Precio = car.Precio;
+        carItem.dataset.Cantidadpuertas = car.Cantidadpuertas;
+        carItem.dataset.Color = car.Color;
+        carItem.dataset.Garantia = car.Garantia;
+        carItem.dataset.Descuentos = car.Descuentos;
+        carItem.dataset.Numeroseguro = car.Numeroseguro;
+
+        carItem.innerHTML = `
+            <img src="${car.Imagen}" alt="${car.Marca} ${car.Modelo}">
+            <h3>${car.Marca} ${car.Modelo}</h3>
+        `;
+
+        serviceContainer.appendChild(carItem);
+
+        carItem.addEventListener('click', function() {
+            modalImg.src = car.Imagen;
+            modalMarcaModelo.textContent = `${car.Marca} ${car.Modelo}`;
+            modalTipoauto.textContent = `Tipo de auto: ${car.Tipoauto}`;
+            modalNumeroserie.textContent = `Número de serie: ${car.Numeroserie}`;
+            modalAnio.textContent = `Año: ${car.Anio}`;
+            modalCilindros.textContent = `Cilindros: ${car.Cilindros}`;
+            modalDisponibilidad.textContent = `Disponibilidad: ${car.Disponibilidad}`;
+            modalPrecio.textContent = `Precio: $${car.Precio}`;
+            modalCantidadpuertas.textContent = `Cantidad de puertas: ${car.Cantidadpuertas}`;
+            modalColor.textContent = `Color: ${car.Color}`;
+            modalGarantia.textContent = `Garantía: ${car.Garantia}`;
+            modalDescuentos.textContent = `Descuento: $${car.Descuentos}`;
+            modalNumeroseguro.textContent = `Número de seguro: ${car.Numeroseguro}`;
+
+            selectedCarTitle = `${car.Marca} ${car.Modelo}`;
+
+            modal.style.display = 'flex';
+        });
+    });
 
     // Filtro de búsqueda
     searchInput.addEventListener('keyup', function() {
         const filter = searchInput.value.toLowerCase();
-        serviceItems.forEach(item => {
+        document.querySelectorAll('.service-item').forEach(item => {
             const text = item.textContent.toLowerCase();
             if (text.includes(filter)) {
                 item.style.display = 'block';
             } else {
                 item.style.display = 'none';
             }
-        });
-    });
-
-    // Abrir modal con la información del vehículo
-    serviceItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const imgSrc = item.querySelector('img').src;
-            const title = item.querySelector('h3').textContent;
-            const description = item.getAttribute('data-description');
-
-            modalImg.src = imgSrc;
-            modalTitle.textContent = title;
-            modalDescription.textContent = description;
-
-            modal.style.display = 'flex';
         });
     });
 
@@ -50,14 +176,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Redirigir a la pantalla de venta del auto seleccionado
     saleBtn.addEventListener('click', function() {
-        const imgSrc = modalImg.src;
-        const title = modalTitle.textContent;
-        const description = modalDescription.textContent;
-
-        localStorage.setItem('vehicleTitle', title);
-        localStorage.setItem('vehicleImg', imgSrc);
-        localStorage.setItem('vehicleDescription', description);
-
-        window.location.href = 'realizarVenta.html';
+        window.location.href = `realizarVenta.html?car=${encodeURIComponent(selectedCarTitle)}`;
     });
 });
