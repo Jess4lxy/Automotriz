@@ -1,0 +1,129 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #1b1b32;
+    color: #f0f0f0;
+}
+
+header {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav .logo {
+    width: 120px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6f42c1;
+}
+
+.services {
+    padding: 20px;
+}
+
+.services h2 {
+    text-align: center;
+    color: #d7b3ff;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.service-item {
+    background-color: #27273a;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    flex: 1 1 calc(20% - 20px);
+    max-width: calc(20% - 20px);
+}
+
+.service-item h3 {
+    color: #d7b3ff;
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+}
+
+.service-item p {
+    color: #f0f0f0;
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.edit-btn, .delete-btn {
+    background-color: #d7b3ff;
+    color: #6f42c1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    background-color: #b38bff;
+}
+
+#add-service-btn {
+    background-color: #d7b3ff;
+    color: #6f42c1;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 20px auto;
+    font-size: 1em;
+}
+
+#add-service-btn:hover {
+    background-color: #b38bff;
+}

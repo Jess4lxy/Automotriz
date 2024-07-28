@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Servicio</title>
+    <link rel="stylesheet" href="./styles/agregarServicio.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <img src="images/TheCarHubLogo.png" alt="The CarHub Logo" class="logo">
+                <ul>
+                    <li><a href="mainAsesor.html">Inicio</a></li>
+                    <li><a href="serviciosAsesor.html">Servicios</a></li>
+                    <li><a href="#">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="form-section">
+        <h2>Agregar Nuevo Servicio</h2>
+        <form id="agregar-servicio-form">
+            <div class="form-group">
+                <label for="tipodeservicio">Tipo de Servicio</label>
+                <input type="text" id="tipodeservicio" name="tipodeservicio" required>
+            </div>
+            <div class="form-group">
+                <label for="fechadeingreso">Fecha de Ingreso</label>
+                <input type="date" id="fechadeingreso" name="fechadeingreso" required>
+            </div>
+            <div class="form-group">
+                <label for="fechadesalida">Fecha de Salida</label>
+                <input type="date" id="fechadesalida" name="fechadesalida" required>
+            </div>
+            <div class="form-group">
+                <label for="costo">Costo</label>
+                <input type="text" id="costo" name="costo" required>
+            </div>
+            <div class="form-group">
+                <label for="auto">Auto</label>
+                <input type="text" id="auto" name="auto" required>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <select id="estado" name="estado" required>
+                    <option value="Completado">Completado</option>
+                    <option value="En proceso">En proceso</option>
+                    <option value="Cancelado">Cancelado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Agregar Servicio</button>
+            </div>
+        </form>
+    </section>
+
+    <script src="./js/agregarServicio.js"></script>
+</body>
+</html>

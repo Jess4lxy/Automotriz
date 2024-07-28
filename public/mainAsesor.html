@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarHub</title>
+    <link rel="stylesheet" href="styles/mainAsesor.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <img src="images/TheCarHubLogo.png" alt="The CarHub Logo" class="logo">
+                <ul>
+                    <li><a href="mainAsesor.html">Inicio</a></li>
+                    <li><a href="serviciosAsesor.html">Servicios</a></li>
+                    <li><a href="#">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bienvenido a The CarHub</h1>
+            <p>Tu solución integral para la gestión vehicular.</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Nuestros Vehículos principales</h2>
+        <input type="text" id="search-bar" placeholder="Buscar autos...">
+        <div class="services-container" id="services-container">
+            <!-- Tarjetas generadas dinámicamente -->
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-img" src="" alt="Car Image">
+            <h3 id="modal-Marca_Modelo"></h3>
+            <p id="modal-Tipoauto"></p>
+            <p id="modal-Numeroserie"></p>
+            <p id="modal-Anio"></p>
+            <p id="modal-Cilindros"></p>
+            <p id="modal-Disponibilidad"></p>
+            <p id="modal-Precio"></p>
+            <p id="modal-Cantidadpuertas"></p>
+            <p id="modal-Color"></p>
+            <p id="modal-Garantia"></p>
+            <p id="modal-Descuentos"></p>
+            <p id="modal-Numeroseguro"></p>
+        </div>
+    </div>
+
+    <script src="js/mainAsesor.js"></script>
+</body>
+</html>
