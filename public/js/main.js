@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
     const closeBtn = document.querySelector('.close');
+    const saleBtn = document.getElementById('sale-btn');
 
     // Filtro de búsqueda
     searchInput.addEventListener('keyup', function() {
@@ -45,5 +46,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target === modal) {
             modal.style.display = 'none';
         }
+    });
+
+    // Redirigir a la pantalla de venta del auto seleccionado
+    saleBtn.addEventListener('click', function() {
+        const imgSrc = modalImg.src;
+        const title = modalTitle.textContent;
+        const description = modalDescription.textContent;
+
+        localStorage.setItem('vehicleTitle', title);
+        localStorage.setItem('vehicleImg', imgSrc);
+        localStorage.setItem('vehicleDescription', description);
+
+        window.location.href = 'realizarVenta.html';
     });
 });

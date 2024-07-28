@@ -1,0 +1,136 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #1b1b32;
+    color: #f0f0f0;
+}
+
+header {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav .logo {
+    width: 120px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6f42c1;
+}
+
+.sale {
+    background-color: #27273a;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.sale h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #d7b3ff;
+}
+
+.sale-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #37374a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.vehicle-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.vehicle-info img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.vehicle-info h3 {
+    color: #d7b3ff;
+    margin: 10px 0;
+}
+
+.vehicle-info p {
+    color: #f0f0f0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+form label {
+    margin-top: 10px;
+    color: #d7b3ff;
+}
+
+form input {
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #d7b3ff;
+    color: #6f42c1;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #b38bff;
+}
