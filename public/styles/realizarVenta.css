@@ -83,19 +83,22 @@ nav ul li a:hover {
 }
 
 .vehicle-info img {
-    width: 100%;
-    max-width: 400px;
+    width: 80%;  /* Reduce the image width */
+    max-width: 320px;  /* Adjust max-width for smaller images */
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;  /* Reduce margin */
 }
 
 .vehicle-info h3 {
     color: #d7b3ff;
-    margin: 10px 0;
+    margin: 5px 0;  /* Reduce margin */
+    font-size: 1.2em;  /* Reduce font size */
 }
 
 .vehicle-info p {
     color: #f0f0f0;
+    font-size: 0.9em;  /* Reduce font size */
+    margin: 3px 0;  /* Reduce margin */
 }
 
 form {

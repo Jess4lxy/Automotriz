@@ -146,6 +146,21 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedCarTitle = `${car.Marca} ${car.Modelo}`;
 
             modal.style.display = 'flex';
+            
+            // Store car details in localStorage
+            localStorage.setItem('vehicleImg', car.Imagen);
+            localStorage.setItem('vehicleTitle', `${car.Marca} ${car.Modelo}`);
+            localStorage.setItem('vehicleTipoauto', car.Tipoauto);
+            localStorage.setItem('vehicleNumeroserie', car.Numeroserie);
+            localStorage.setItem('vehicleAnio', car.Anio);
+            localStorage.setItem('vehicleCilindros', car.Cilindros);
+            localStorage.setItem('vehicleDisponibilidad', car.Disponibilidad);
+            localStorage.setItem('vehiclePrecio', car.Precio);
+            localStorage.setItem('vehicleCantidadpuertas', car.Cantidadpuertas);
+            localStorage.setItem('vehicleColor', car.Color);
+            localStorage.setItem('vehicleGarantia', car.Garantia);
+            localStorage.setItem('vehicleDescuentos', car.Descuentos);
+            localStorage.setItem('vehicleNumeroseguro', car.Numeroseguro);
         });
     });
 
@@ -176,6 +191,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Redirigir a la pantalla de venta del auto seleccionado
     saleBtn.addEventListener('click', function() {
-        window.location.href = `realizarVenta.html?car=${encodeURIComponent(selectedCarTitle)}`;
+        window.location.href = 'realizarVenta.html';
     });
 });
