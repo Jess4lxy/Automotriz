@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const servicesContainer = document.getElementById('services-container');
-
-    // Aquí simulo algunos servicios para mostrar en la página
+    const searchBar = document.getElementById('search-bar');
+    const modal = document.getElementById('modal');
+    const closeModal = document.querySelector('.close');
+    
+    // Datos simulados de servicios
     const services = [
         { id: 1, tipodeservicio: 'Cambio de aceite', fechadeingreso: '2023-01-15', fechadesalida: '2023-01-20', costo: '1500 MXN', empleado: 'Juan Pérez', auto: 'Mazda Miata MX-5', estado: 'Completado' },
         { id: 2, tipodeservicio: 'Alineación y balanceo', fechadeingreso: '2023-02-10', fechadesalida: '2023-02-15', costo: '1200 MXN', empleado: 'Juan Pérez', auto: 'Nissan NP300', estado: 'En proceso' },
@@ -17,55 +20,57 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 12, tipodeservicio: 'Cambio de bujías', fechadeingreso: '2023-12-15', fechadesalida: '2023-12-16', costo: '600 MXN', empleado: 'Juan Pérez', auto: 'Mazda CX-5', estado: 'Completado' },
     ];
 
-    function renderServices() {
+    // Función para crear y mostrar los elementos de servicio
+    function loadServices(filteredServices = services) {
         servicesContainer.innerHTML = '';
-        services.forEach(service => {
+        filteredServices.forEach(service => {
             const serviceItem = document.createElement('div');
-            serviceItem.className = 'service-item';
-
+            serviceItem.classList.add('service-item');
             serviceItem.innerHTML = `
                 <h3>${service.tipodeservicio}</h3>
-                <p>Ingreso: ${service.fechadeingreso}</p>
-                <p>Salida: ${service.fechadesalida}</p>
-                <p>Costo: ${service.costo}</p>
-                <p>Empleado: ${service.empleado}</p>
-                <p>Auto: ${service.auto}</p>
+                <p>Fecha de ingreso: ${service.fechadeingreso}</p>
+                <p>Fecha de salida: ${service.fechadesalida}</p>
                 <p>Estado: ${service.estado}</p>
-                <button class="edit-btn" data-id="${service.id}">Editar</button>
-                <button class="delete-btn" data-id="${service.id}">Eliminar</button>
             `;
-
+            serviceItem.addEventListener('click', () => showServiceDetails(service));
             servicesContainer.appendChild(serviceItem);
         });
     }
 
-    renderServices();
+    // Función para mostrar los detalles del servicio en un modal
+    function showServiceDetails(service) {
+        document.getElementById('modal-tipodeservicio').innerText = `Tipo de Servicio: ${service.tipodeservicio}`;
+        document.getElementById('modal-id').innerText = `ID: ${service.id}`;
+        document.getElementById('modal-fechadeingreso').innerText = `Fecha de Ingreso: ${service.fechadeingreso}`;
+        document.getElementById('modal-fechadesalida').innerText = `Fecha de Salida: ${service.fechadesalida}`;
+        document.getElementById('modal-costo').innerText = `Costo: ${service.costo}`;
+        document.getElementById('modal-empleado').innerText = `Empleado: ${service.empleado}`;
+        document.getElementById('modal-auto').innerText = `Auto: ${service.auto}`;
+        document.getElementById('modal-estado').innerText = `Estado: ${service.estado}`;
+        modal.style.display = 'block';
+    }
 
-    // Redirigir al formulario para agregar servicios
-    document.getElementById('add-service-btn').addEventListener('click', function() {
-        window.location.href = 'agregarServicio.html';
+    // Función para cerrar el modal
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
     });
 
-    // Manejar el clic en el botón de editar
-    servicesContainer.addEventListener('click', function(event) {
-        if (event.target.classList.contains('edit-btn')) {
-            const serviceId = event.target.getAttribute('data-id');
-            window.location.href = `editarServicio.html?id=${serviceId}`;
-        }
-
-        // Manejar el clic en el botón de eliminar
-        if (event.target.classList.contains('delete-btn')) {
-            const serviceId = event.target.getAttribute('data-id');
-            const confirmDelete = confirm('¿Está seguro de que desea eliminar este servicio?');
-            if (confirmDelete) {
-                // Eliminar el servicio del array
-                // este apartado solo es temporal, cambialo para la conexion a backend
-                const serviceIndex = services.findIndex(service => service.id == serviceId);
-                if (serviceIndex !== -1) {
-                    services.splice(serviceIndex, 1);
-                    renderServices();
-                }
-            }
+    // Cerrar el modal al hacer clic fuera del contenido del modal
+    window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+            modal.style.display = 'none';
         }
     });
+
+    // Función para filtrar los servicios según el texto ingresado en el campo de búsqueda
+    searchBar.addEventListener('input', function() {
+        const searchText = searchBar.value.toLowerCase();
+        const filteredServices = services.filter(service =>
+            service.tipodeservicio.toLowerCase().includes(searchText)
+        );
+        loadServices(filteredServices);
+    });
+
+    // Cargar los servicios al cargar la página
+    loadServices();
 });

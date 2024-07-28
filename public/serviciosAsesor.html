@@ -22,11 +22,27 @@
 
     <section class="services">
         <h2>Administrar Servicios</h2>
+        <input type="text" id="search-bar" placeholder="Buscar servicios...">
         <button id="add-service-btn">Agregar Servicio</button>
         <div class="services-container" id="services-container">
             <!-- Servicios se cargarán aquí dinámicamente -->
         </div>
     </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modal-tipodeservicio"></h3>
+            <p id="modal-id"></p>
+            <p id="modal-fechadeingreso"></p>
+            <p id="modal-fechadesalida"></p>
+            <p id="modal-costo"></p>
+            <p id="modal-empleado"></p>
+            <p id="modal-auto"></p>
+            <p id="modal-estado"></p>
+            <button class="edit-btn" id="edit-btn-modal">Editar</button>
+        </div>
+    </div>
 
     <script src="./js/serviciosAsesor.js"></script>
 </body>
